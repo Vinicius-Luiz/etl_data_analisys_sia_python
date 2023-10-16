@@ -47,23 +47,36 @@ Com a evolução do SUS para uma gestão cada vez mais descentralizada, o Minist
 
 ## Descrição das variáveis utilizadas
 
-| Variável              | Descrição                                                    |
-| --------------------- | ------------------------------------------------------------ |
-| Município             | Município de Pernambuco                                      |
-| Profissional - CBO    | Profissional segundo a Classificação Brasileira de Ocupações |
-| Grupo Procedimento    | Grupo do procedimento realizado, de acordo com a Tabela de Procedimentos, Medicamentos, Órteses e Próteses e Materiais Especiais do SUS |
-| Subgrupo Procedimento | Subgrupo do procedimento realizado, de acordo com a Tabela de Procedimentos, Medicamentos, Órteses e Próteses e Materiais Especiais do SUS |
-| Complexidade          | Subgrupo do procedimento realizado, de acordo com a Tabela de Procedimentos, Medicamentos, Órteses e Próteses e Materiais Especiais do SUS |
-| Ano processamento     | Ano de processamento/movimento dos dados.                    |
-| Qtd. aprovada         | Quantidade de procedimentos aprovados para pagamento pelas Secretarias de Saúde. |
-| Valor aprovado        | Valor aprovado para pagamento pelas Secretarias de Saúde.    |
-| Outros                | Indicadores utilizados para monitorar a evolução e as atividades dos pacientes (Encerramento, Alta, Transferência, Óbito) |
+| Variável                  | Descrição                                                    |
+| ------------------------- | ------------------------------------------------------------ |
+| Município                 | Município de Pernambuco                                      |
+| Profissional - CBO        | Profissional segundo a Classificação Brasileira de Ocupações |
+| Grupo Procedimento        | Grupo do procedimento realizado, de acordo com a Tabela de Procedimentos, Medicamentos, Órteses e Próteses e Materiais Especiais do SUS |
+| Subgrupo Procedimento     | Subgrupo do procedimento realizado, de acordo com a Tabela de Procedimentos, Medicamentos, Órteses e Próteses e Materiais Especiais do SUS |
+| Complexidade              | Subgrupo do procedimento realizado, de acordo com a Tabela de Procedimentos, Medicamentos, Órteses e Próteses e Materiais Especiais do SUS |
+| Ano/Mês processamento     | Ano e Mês de processamento/movimento dos dados.              |
+| Qtd. aprovada             | Quantidade de procedimentos aprovados para pagamento pelas Secretarias de Saúde. |
+| Valor aprovado            | Valor aprovado para pagamento pelas Secretarias de Saúde.    |
+| Indicadores de evolução   | Indicadores utilizados para monitorar a evolução e as atividades dos pacientes (Encerramento, Alta, Transferência, Óbito) |
+| Informações de residência | Informações de residência do paciente (Estado ou Município do paciente é diferente da localização do estabelecimento) |
 
 ## Coleta e tratamento de dados do SIA
 
 ### Fase 1: Ocorrências do SIA - PySUS
 
-<p style="color: red">A fazer</p>
+***Arquivo: 001_SIA_PySUS.ipynb***
+
+1. Instalado a biblioteca `pysus` usando o comando `!pip install pysus`.
+2. Importado as funcionalidades relacionadas ao SIA do pacote `pysus`.
+3. Definido o período de anos (2021, 2022 e 2023) e meses (de 1 a 12) para extração dos dados.
+4. Iterado pelos anos e meses desejados.
+5. Para cada mês e ano, foi baixado os dados do SIA para o estado de Pernambuco (PE) usando a função `download`. Os dados foram obtidos através do tipo de dado Produção Ambulatorial **(group='PA')**
+6. Se os dados estiveram disponíveis, foi convertido de formato Parquet em um DataFrame do Pandas
+7. Selecionado apenas as colunas relevantes para análise a partir de um dicionário chamado `selected_columns`
+8. Transformado a coluna de data **'PA_CMP' (Data da Realização do Procedimento)** de formato *YYYYMM* para *DD/MM/YYYY*
+9. Criado colunas adicionais **'PA_G_PROC_ID' (Procedimento-Grupo)** e **'PA_SG_PROC_ID' (Procedimento-Subgrupo)** com base na coluna **'PA_PROC_ID' (Procedimento realizado)**
+10. Convertido os valores contábeis em formato string para números inteiros **'PA_QTDAPR' (Quantidade aprovada)** e números de ponto flutuante **'PA_VALAPR' (Valor aprovado)**
+11. Foi salvo DataFrame em um arquivo CSV com um nome específico para o mês e ano correspondentes no caminho especificado ***(Ex: SIA_2023_08.csv)***.
 
 ### Fase 2: Descrição dos códigos - TabNet
 
