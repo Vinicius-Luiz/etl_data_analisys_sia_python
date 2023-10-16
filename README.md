@@ -80,7 +80,21 @@ Com a evolução do SUS para uma gestão cada vez mais descentralizada, o Minist
 
 ### Fase 2: Descrição dos códigos - TabNet
 
-<p style="color: red">A fazer</p>
+1. Os dados descritivos foram obtidos a partir do TabNet do DataSUS.
+
+2. Inicialmente, foi selecionado a variável que desejamos na opção de **Linha.**
+
+   <img src="_images/tabnet_001.png" width="70%"></img>
+
+3. Ao inspecionar o elemento que contém o texto csv, é extraído os dados.
+
+   <img src="_images/tabnet_002.png" width="70%"></img>
+
+4. É realizado um breve tratamento na remoção de aspas no arquivo.
+
+   <img src="_images/tabnet_003.png" width="70%"></img>
+
+   5. Foi feita uma operação para criar duas novas colunas no DataFrame **(ID_<variavel>**e **DS_<variavel>)**. Que contém o código e a descrição numérico do variável, respectivamente.
 
 ## Referências
 
