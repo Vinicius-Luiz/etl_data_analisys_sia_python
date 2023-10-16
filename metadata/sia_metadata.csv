@@ -1,0 +1,65 @@
+Variável,Descrição
+PA_CODUNI,Código do CNES do Estabelecimento de Saude. 
+PA_GESTAO,Código da Unidade da Federação7 (IBGE) + Código do Município (IBGE) do Gestor ou UF0000 se o estabelecimento estiver sob Gestão Estadual
+PA_CONDIC,"Sigla do Tipo de Gestão que o Estado ou Município está habilitado
+- EC= Estado Convencional
+- PB= Município em Gestão PAB
+- MP= Município em Gestão Plena do Sistema Municipal
+- MS= Município em Gestão Semiplena"
+PA_UFMUN,Unidade da Federação + município de localização
+PA_REGCT,Código da Regra Contratual
+PA_INCOUT,Incremento Outros
+PA_INCURG,Incremento Urgência
+PA_TPUPS,Tipo de Estabelecimento
+PA_TIPPRE,Tipo de Prestador
+PA_MN_IND,Indica se o Estabelecimento é Mantido / Individual 
+PA_CNPJCPF,CNPJ do Estabelecimento executante
+PA_CNPJMNT,CNPJ da Mantenedora do Estabelecimento
+PA_CNPJ_CC,CNPJ do Órgão que recebeu pela produção por cessão de crédito
+PA_MVM,Data de Processamento / Movimento (AAAAMM)
+PA_CMP,Data da Realização do Procedimento / Competência (AAAAMM)
+PA_PROC_ID,Código do Procedimento Ambulatorial
+PA_TPFIN,Tipo de Financiamento da produção
+PA_SUBFIN,Subtipo de Financiamento da produção
+PA_NIVCPL,Complexidade do Procedimento
+PA_DOCORIG,Instrumento de Registro 
+PA_AUTORIZ,Número da APAC ou número de autorização do BPA-I conforme o caso. No BPA-I não é obrigatório portanto não é criticado. Lei de formação: UFAATsssssssd onde: UF – Unid. da Federação AA – ano T – tipo sssssss – sequencial d – dígito
+PA_CNSMED,Número do CNS (Cartão Nacional de Saúde) do profissional de saúde executante
+PA_CBOCOD,Código de Ocupação Brasileira do Profissional de saúde executante
+PA_MOTSAI,Motivo de Saída ou Permanência 
+PA_OBITO, Indicador de óbito (1 para sim 0 para não)
+PA_ENCERR,Indicador de Encerramento (APAC)
+PA_PERMAN,Indicador de Permanência (APAC)
+PA_ALTA,Indicador de Alta (APAC)
+PA_TRANSF,Indicador de transferência (1 para sim 0 para não)
+PA_CIDPRI,CID principal Classificação Internacional de Doença
+PA_CIDSEC,CID Secundário (APAC)
+PA_CIDCAS,CID Causas Associandas
+PA_CATEND,Caráter de Atendimento (APAC ou BPA-I)
+PA_IDADE, Idade do paciente em anos
+IDADEMIN,Idade mínima do paciente para realização do procedimento
+IDADEMAX,Idade máxima do paciente para realização do procedimento
+PA_FLIDADE,Compatibilidade com a faixa de idade do procedimento (SIGTAP – Sistema de Gerenciamento da Tabela de Procedimentos do SUS): 0 = Idade não exigida 1 = Idade compatível com o SIGTAP 2 = Idade fora da faixa do SIGTAP 3 = Idade inexistente 4 = Idade EM BRANCO
+PA_SEXO,Sexo do paciente
+PA_RACACOR,Raça/Cor do paciente: 01 - Branca 02 - Preta 03 - Parda 04 - Amarela 05 - Indígena 99 - Sem informação
+PA_MUNPCN,Código do município de residência do paciente
+PA_QTDPRO,Quantidade produzida (apresentada)
+PA_QTDAPR,Quantidade Aprovada do procedimento
+PA_VALPRO,Valor apresentado
+PA_VALAPR,Valor aprovado
+PA_UFDIF,Indica se a UF de residência do paciente é diferente da UF de localização do estabelecimento: 0 = mesma UF 1 = UF diferente
+PA_MNDIF,Indica se o município de residência do paciente é diferente do município de localização do estabelecimento: 0 = mesmo município 1 = município diferente
+PA_DIF_VAL,Diferença do Valor Unitário do procedimento praticado na Tabela Unificada com Valor Unitário praticado pelo Gestor da Produção multiplicado pela Quantidade Aprovada
+NU_VPA_TOT,Valor Unitário do Procedimento da Tabela VPA
+NU_PA_TOT,Valor Unitário do Procedimento da Tabela SIGTAP
+PA_INDICA,Indicativo de situação da produção produzida: 0 = não aprovado 5 = aprovado total 6 = aprovado parcial
+PA_CODOCO,Código de Ocorrência
+PA_FLQT,Indicador de erro de Quantidade Produzida
+PA_FLER,Indicador de erro de corpo da APAC
+PA_ETNIA,Etnia do paciente
+PA_VL_CF,Valor do Complemento Federal
+PA_VL_CL,Valor do Complemento Local
+PA_VL_INC,Valor do Incremento
+PA_SRV_C,?
+PA_INE,Código de Identificação Nacional de Equipes10 para registrar a atuação das equipes na execução de ações de saúde
+PA_NAT_JUR,Código da Natureza Jurídica
