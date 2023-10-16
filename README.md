@@ -57,6 +57,17 @@ Com a evolução do SUS para uma gestão cada vez mais descentralizada, o Minist
 | Ano processamento     | Ano de processamento/movimento dos dados.                    |
 | Qtd. aprovada         | Quantidade de procedimentos aprovados para pagamento pelas Secretarias de Saúde. |
 | Valor aprovado        | Valor aprovado para pagamento pelas Secretarias de Saúde.    |
+| Outros                | Indicadores utilizados para monitorar a evolução e as atividades dos pacientes (Encerramento, Alta, Transferência, Óbito) |
+
+## Coleta e tratamento de dados do SIA
+
+### Fase 1: Ocorrências do SIA - PySUS
+
+<p style="color: red">A fazer</p>
+
+### Fase 2: Descrição dos códigos - TabNet
+
+<p style="color: red">A fazer</p>
 
 ## Referências
 
