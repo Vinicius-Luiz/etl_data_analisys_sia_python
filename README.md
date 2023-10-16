@@ -46,3 +46,14 @@ Com a evolução do SUS para uma gestão cada vez mais descentralizada, o Minist
 - Dados não seguem **padrões de relacionamento.**
 
 ## Descrição das variáveis utilizadas
+
+| Variável              | Descrição                                                    |
+| --------------------- | ------------------------------------------------------------ |
+| Município             | Município de Pernambuco                                      |
+| Profissional - CBO    | Profissional segundo a Classificação Brasileira de Ocupações |
+| Grupo Procedimento    | Grupo do procedimento realizado, de acordo com a Tabela de Procedimentos, Medicamentos, Órteses e Próteses e Materiais Especiais do SUS |
+| Subgrupo Procedimento | Subgrupo do procedimento realizado, de acordo com a Tabela de Procedimentos, Medicamentos, Órteses e Próteses e Materiais Especiais do SUS |
+| Complexidade          | Subgrupo do procedimento realizado, de acordo com a Tabela de Procedimentos, Medicamentos, Órteses e Próteses e Materiais Especiais do SUS |
+| Ano processamento     | Ano de processamento/movimento dos dados.                    |
+| Qtd. aprovada         | Quantidade de procedimentos aprovados para pagamento pelas Secretarias de Saúde. |
+| Valor aprovado        | Valor aprovado para pagamento pelas Secretarias de Saúde.    |
