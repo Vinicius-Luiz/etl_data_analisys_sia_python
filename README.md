@@ -57,3 +57,15 @@ Com a evolução do SUS para uma gestão cada vez mais descentralizada, o Minist
 | Ano processamento     | Ano de processamento/movimento dos dados.                    |
 | Qtd. aprovada         | Quantidade de procedimentos aprovados para pagamento pelas Secretarias de Saúde. |
 | Valor aprovado        | Valor aprovado para pagamento pelas Secretarias de Saúde.    |
+
+## Referências
+
+*Produção Ambulatorial do SUS por local de atendimento – a partir de 2008 - Notas Técnicas. Disponível em: http://tabnet.datasus.gov.br/cgi/sia/Prod_amb_loc_atend_2008.pdf*
+
+*AUDITORIA NO SUS: NOÇÕES BÁSICAS SOBRE SISTEMAS DE INFORMAÇÃO. Disponível em: https://bvsms.saude.gov.br/bvs/publicacoes/auditoria_sus.pdf*
+
+*Auditoria no SUS: noções básicas sobre Sistemas de Informações. Disponível em: https://bvsms.saude.gov.br/bvs/publicacoes/auditoria_sus2004_2.pdf*
+
+*Disseminação de Informações do Sistema de Informações Ambulatoriais (SIA). Disponível em: http://w3.datasus.gov.br/siasih/Arquivos/SIASUS_Informe_T%C3%A9cnico_2008-01.pdf*
+
+*ESTUDO DE VIABILIDADE DE REÚSO DA ONTOLOGIA PLP (Patient Life Path) PARA INTEGRAÇÃO SEMÂNTICA DE DADOS ABERTOS DA ÁREA DA SAÚDE. Disponível em: https://repositorio.utfpr.edu.br/jspui/bitstream/1/23715/1/CT_COSIS_2019_2_07.pdf*
