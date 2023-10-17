@@ -62,7 +62,7 @@ Com a evolução do SUS para uma gestão cada vez mais descentralizada, o Minist
 
 ## Coleta e tratamento de dados do SIA
 
-### Fase 1: Ocorrências do SIA - PySUS
+### Fase 1: Extração de ocorrências do SIA - PySUS
 
 ***Arquivo: 001_SIA_PySUS.ipynb***
 
@@ -78,7 +78,7 @@ Com a evolução do SUS para uma gestão cada vez mais descentralizada, o Minist
 10. Convertido os valores contábeis em formato string para números inteiros **'PA_QTDAPR' (Quantidade aprovada)** e números de ponto flutuante **'PA_VALAPR' (Valor aprovado)**
 11. Foi salvo DataFrame em um arquivo CSV com um nome específico para o mês e ano correspondentes no caminho especificado ***(Ex: SIA_2023_08.csv)***.
 
-### Fase 2: Descrição dos códigos - TabNet
+### Fase 2: Extração da descrição dos códigos - TabNet
 
 1. Os dados descritivos foram obtidos a partir do TabNet do DataSUS.
 
@@ -94,7 +94,10 @@ Com a evolução do SUS para uma gestão cada vez mais descentralizada, o Minist
 
    <img src="_images/tabnet_003.png" width="70%"></img>
 
-   5. Foi feita uma operação para criar duas novas colunas no DataFrame **(ID_<variavel>**e **DS_<variavel>)**. Que contém o código e a descrição numérico do variável, respectivamente.
+5. Foi feita uma operação para criar duas novas colunas no DataFrame **(<variavel>**e **DS_<variavel>)**. Que contém o código e a descrição numérico do variável, respectivamente.
+
+### Fase 3: Conversão e manipulação dos arquivos CSV para Parquet
+A Fazer
 
 ## Referências
 
