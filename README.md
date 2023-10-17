@@ -97,7 +97,93 @@ Com a evolução do SUS para uma gestão cada vez mais descentralizada, o Minist
 5. Foi feita uma operação para criar duas novas colunas no DataFrame **(<variavel>**e **DS_<variavel>)**. Que contém o código e a descrição numérico do variável, respectivamente.
 
 ### Fase 3: Conversão e manipulação dos arquivos CSV para Parquet
-A Fazer
+Os dados extraídos do PySUS foram unidos com os dados descritivos obtidos no TabNET. O dataset do PySUS consiste em um total de 33.831.473 linhas, o que pode ser bastante volumoso e demandar recursos significativos para processamento.
+
+**Dados do PySUS**
+
+```python
+df_pysus = spark.read.parquet(PATH_PYSUS_PARQUET)
+df_pysus.printSchema()
+```
+
+```python
+root
+ |-- PA_UFMUN: integer (nullable = true)
+ |-- PA_PROC_ID: integer (nullable = true)
+ |-- PA_NIVCPL: integer (nullable = true)
+ |-- PA_CBOCOD: string (nullable = true)
+ |-- PA_OBITO: integer (nullable = true)
+ |-- PA_ENCERR: integer (nullable = true)
+ |-- PA_PERMAN: integer (nullable = true)
+ |-- PA_ALTA: integer (nullable = true)
+ |-- PA_TRANSF: integer (nullable = true)
+ |-- PA_QTDAPR: integer (nullable = true)
+ |-- PA_VALAPR: double (nullable = true)
+ |-- PA_UFDIF: integer (nullable = true)
+ |-- PA_MNDIF: integer (nullable = true)
+ |-- PA_G_PROC_ID: integer (nullable = true)
+ |-- PA_SG_PROC_ID: integer (nullable = true)
+ |-- PA_CMP: date (nullable = true)
+
+CPU times: total: 0 ns
+Wall time: 229 ms
+```
+
+**Dados descritivos do Município**
+
+```python
+df_ufmun = read_csv(PATH_TABNET_UFMUN)
+df_ufmun.printSchema()
+```
+
+```python
+root
+ |-- PA_UFMUN: integer (nullable = true)
+ |-- DS_PA_UFMUN: string (nullable = true)
+```
+
+**Join dos DataFrames**
+
+```python
+df = df_pysus.join(df_ufmun, 'PA_UFMUN', how='left')
+df.select('PA_UFMUN', 'DS_PA_UFMUN', 'PA_QTDAPR', 'PA_VALAPR')\
+  .show(3, False)
+```
+
+```python
++--------+-----------+---------+---------+
+|PA_UFMUN|DS_PA_UFMUN|PA_QTDAPR|PA_VALAPR|
++--------+-----------+---------+---------+
+|261160  |RECIFE     |1        |1.85     |
+|260680  |IGARASSU   |1        |0.0      |
+|261160  |RECIFE     |2        |3.7      |
++--------+-----------+---------+---------+
+only showing top 3 rows
+```
+
+Para melhorar o desempenho de processamento desses dados, foi optado por converter o arquivo CSV em formato Parquet utilizando a biblioteca PySpark. O formato Parquet é um formato de armazenamento de dados colunares altamente eficiente e amplamente utilizado em ecossistemas de big data, como o Hadoop.
+
+**Lendo o arquivo csv do dataset PySUS**
+
+```python
+df_pysus = spark.read.csv(PATH_PYSUS, sep=';', header=True, inferSchema=True)
+```
+
+```python
+CPU times: total: 0 ns
+Wall time: 18.3 s
+```
+
+**Lendo o arquivo Parquet do dataset PySUS**
+
+```python
+df_pysus = spark.read.parquet(PATH_PYSUS_PARQUET)
+```
+
+```python
+CPU times: total: 0 ns
+Wall time: 238 ms
+```
 
 ## Referências
 
