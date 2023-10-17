@@ -132,7 +132,7 @@ Wall time: 229 ms
 **Dados descritivos do Município**
 
 ```python
-df_ufmun = read_csv(PATH_TABNET_UFMUN)
+df_ufmun = spark.read.csv(PATH_TABNET_UFMUN, sep=';', header=True, inferSchema=True)
 df_ufmun.printSchema()
 ```
 
