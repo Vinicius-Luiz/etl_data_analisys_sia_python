@@ -35,15 +35,10 @@ Com a evolução do SUS para uma gestão cada vez mais descentralizada, o Minist
 - **Padronização dos dados:** Isso pode dificultar a análise dos dados e a comparação entre diferentes regiões ou unidades de saúde.
 - **Subnotificação:** A subnotificação de casos e procedimentos é outro desafio que pode comprometer a precisão dos dados do SIA.
 
-## Levantamento da necessidade
+## Desafios do projeto
 
 1. Identificar os **procedimentos** realizados por **profissionais** não especializados
 2. Identificar os municípios recebem valor de **verba** inconsistente em relação a quantidade de **atendimentos realizados**.
-
-## Desafios do projeto
-
-- Base de dados só pode ser extraída em no máximo **duas dimensões;**
-- Dados não seguem **padrões de relacionamento.**
 
 ## Descrição das variáveis utilizadas
 
