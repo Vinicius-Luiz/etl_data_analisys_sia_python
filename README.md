@@ -75,6 +75,8 @@ Com a evolução do SUS para uma gestão cada vez mais descentralizada, o Minist
 
 ### Fase 2: Extração da descrição dos códigos - TabNet
 
+***Arquivo: 002_SIA_TABNET.ipynb***
+
 1. Os dados descritivos foram obtidos a partir do TabNet do DataSUS.
 
 2. Inicialmente, foi selecionado a variável que desejamos na opção de **Linha.**
@@ -92,6 +94,9 @@ Com a evolução do SUS para uma gestão cada vez mais descentralizada, o Minist
 5. Foi feita uma operação para criar duas novas colunas no DataFrame **(<variavel>**e **DS_<variavel>)**. Que contém o código e a descrição numérico do variável, respectivamente.
 
 ### Fase 3: Conversão e manipulação dos arquivos CSV para Parquet
+
+***Arquivo: 003_SIA_Join_Datasets.ipynb***
+
 Os dados extraídos do PySUS foram unidos com os dados descritivos obtidos no TabNET. O dataset do PySUS consiste em um total de 33.831.473 linhas, o que pode ser bastante volumoso e demandar recursos significativos para processamento.
 
 **Dados do PySUS**
