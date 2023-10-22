@@ -43,10 +43,10 @@ PA_FLIDADE,Compatibilidade com a faixa de idade do procedimento (SIGTAP – Sist
 PA_SEXO,Sexo do paciente
 PA_RACACOR,Raça/Cor do paciente: 01 - Branca 02 - Preta 03 - Parda 04 - Amarela 05 - Indígena 99 - Sem informação
 PA_MUNPCN,Código do município de residência do paciente
-PA_QTDPRO,Quantidade produzida (apresentada)
-PA_QTDAPR,Quantidade Aprovada do procedimento
-PA_VALPRO,Valor apresentado
-PA_VALAPR,Valor aprovado
+PA_QTDPRO,Quantidade de procedimentos apresentados para pagamento
+PA_QTDAPR,Quantidade de procedimentos aprovados para pagamento pelas Secretarias de Saúde. 
+PA_VALPRO,Valor dos procedimentos apresentados para pagamento.
+PA_VALAPR,Valor aprovado para pagamento pelas Secretarias de Saúde. 
 PA_UFDIF,Indica se a UF de residência do paciente é diferente da UF de localização do estabelecimento: 0 = mesma UF 1 = UF diferente
 PA_MNDIF,Indica se o município de residência do paciente é diferente do município de localização do estabelecimento: 0 = mesmo município 1 = município diferente
 PA_DIF_VAL,Diferença do Valor Unitário do procedimento praticado na Tabela Unificada com Valor Unitário praticado pelo Gestor da Produção multiplicado pela Quantidade Aprovada
