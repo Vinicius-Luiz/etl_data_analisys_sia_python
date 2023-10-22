@@ -185,6 +185,16 @@ CPU times: total: 0 ns
 Wall time: 238 ms
 ```
 
+### Fase 4: Analisando os dados obtidos
+
+Inicialmente, fez-se necessário definir como será quantificado a realização de procedimentos: contagem de linhas no Dataset x somatório da coluna PA_QTDAPR (Quantidade de procedimentos aprovados para pagamento pelas Secretarias de Saúde).<br>
+
+Após comparações dos dados obtidos do PySUS e TabNet, chegou a conclusão de que a contagem de linhas no Dataset será definido para quantificar a realização de procedimentos. Segue um exemplo de como foi realizado esta definição:
+
+<img src="_images\qtd_proc_001.png" width="70%"></img>
+
+<img src="_images\qtd_proc_002.png" width="70%"></img>
+
 ## Referências
 
 *Produção Ambulatorial do SUS por local de atendimento – a partir de 2008 - Notas Técnicas. Disponível em: http://tabnet.datasus.gov.br/cgi/sia/Prod_amb_loc_atend_2008.pdf*
