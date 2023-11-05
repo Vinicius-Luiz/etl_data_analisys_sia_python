@@ -1,7 +1,11 @@
 # ETL e Análise de dados - Sistema de Informação Ambulatorial
 Extração, Transformação, Carregamento e Análise da base de dados do Sistema de Informação Ambulatorial (SIA) no estado de Pernambuco
 
+## Como executar
 
+1. Extrair os arquivos **data\001_PYSUS.rar** e **data\002_TABNET.rar**
+3. Executar o arquivo **003_SIA_Join_Datasets.ipynb**
+4. Realizar as análises no arqivo **004_Data_Analysis.ipynb**
 
 ## Descrição da base de dados
 
@@ -126,7 +130,7 @@ root
  |-- PA_CMP: date (nullable = true)
 
 CPU times: total: 0 ns
-Wall time: 229 ms
+Wall time: 230 ms
 ```
 
 **Dados descritivos do Município**
@@ -187,13 +191,46 @@ Wall time: 238 ms
 
 ### Fase 4: Analisando os dados obtidos
 
+***Arquivo: 004_Data_Analysis.ipynb***
+
 Inicialmente, fez-se necessário definir como será quantificado a realização de procedimentos: contagem de linhas no Dataset x somatório da coluna PA_QTDAPR (Quantidade de procedimentos aprovados para pagamento pelas Secretarias de Saúde).<br>
 
 Após comparações dos dados obtidos do PySUS e TabNet, chegou a conclusão de que a contagem de linhas no Dataset será definido para quantificar a realização de procedimentos. Segue um exemplo de como foi realizado esta definição:
 
+> A coluna **COUNT(1)** realiza a contagem de linhas<br>
+> A coluna **SUM(PA_QTDAPR)** realiza o somatório da quantidade aprovada para pagamento<br>
 <img src="_images\qtd_proc_001.png" width="70%"></img>
 
+> Os dados do TABNET são mais próximos da coluna **COUNT(1)**<br>
 <img src="_images\qtd_proc_002.png" width="70%"></img>
+
+#### Identificação de procedimentos realizados por profissionais não especializados
+
+Foi apresentado gráficos que evidenciam procedimentos ambulatoriais que foram realizados por profissionais não especializados. Como na imagem abaixo, onde, diversos profissionais distintos realizaram o procedimento de Radiografia de Toxa em Petrolina.
+<img src="_images\output_001.png"></img>
+
+#### Identificação de municípios que recebem valor de verba inconsistente em relação a quantidade de atendimentos realizados
+
+Ao realizar a análise dos procedimentos mais caros realizados comparando o município com **maior valor médio** pago por atendimento (Itambé) e o município com **menor valor médio** pago por atendimento (Brejo da Madre de Deus). É notável a diferença entre os valores obtidos considerando o mesmo procedimento. Por exemplo, o **Atendimento de Urgência em Atenção Especializada** é muito mais caro no município de Itambé (10.944,06 Reais por atendimento) do que no município de Brejo da Madre de Deus (1741,71 Reais por atendimento). A mesma diferença é observada em outros procedimentos, como:  Dosagem de Hemoglobina Glicolisada, Dosagem de Colesterol e Atendimento de Urgência c/ Observação até 24h em Atenção Especializada.
+<img src="_images\output_005.png"></img>
+
+#### Outros resultados
+
+Os profissionais, como "Medico em medicina nuclear" e "Farmaceutico," se destacam ao realizarem predominantemente procedimentos classificados como "Alta Complexidade," com porcentagens acima de 98%. 
+<img src="_images\output_002.png"></img>
+
+Nesta análise, foram selecionados profissionais que apresentaram mais de 100 mil atendimentos entre os anos de 2021 e 2022 (anos em que temos registros completos de janeiro à dezembro). Além disso, considerou-se como critério de análise os cinco profissionais com maior resultado no indicador de coeficiente de variação entre os meses.<br>
+
+Uma observação importante é a drástica diminuição na quantidade de atendimentos a partir do mês de setembro. Entre os profissionais selecionados, o médico oftalmologista se destacou com o maior número de atendimentos ao longo do período, com uma média mensal superior a 400 mil procedimentos. No entanto, é notável que sua carga de trabalho também sofreu uma queda acentuada a partir de Setembro.<br>
+
+Os outros quatro profissionais, Farmacêutico, Enfermeiro, Fisioterapeuta geral e Médico em radiologia e diagnóstico por imagem, também tiveram um número significativo de atendimentos, mas experimentaram quedas similares em Setembro. Suas cargas de trabalho, embora tenham variado mês a mês, demonstraram uma tendência de queda.
+<img src="_images\output_003.png"></img>
+
+O município de Verdejante ocupando a última posição em termos de valor pago. Esses números podem indicar desafios na infraestrutura de saúde, acesso aos serviços de saúde ou até mesmo a baixa demanda por atendimentos ambulatoriais nessas regiões.
+<img src="_images\output_004.png"></img>
+
+Municípios como Garanhuns, Palmares, e Arcoverde atraem uma parcela considerável de pacientes de outros municípios, possivelmente devido à oferta de serviços de saúde mais abrangentes e de qualidade em suas respectivas regiões. 
+<img src="_images\output_006.png"></img>
 
 ## Referências
 
