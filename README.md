@@ -1,6 +1,31 @@
 # ETL e Análise de dados - Sistema de Informação Ambulatorial
 Extração, Transformação, Carregamento e Análise da base de dados do Sistema de Informação Ambulatorial (SIA) no estado de Pernambuco
 
+## Arquivos .ipynb
+- **001_SIA_PySUS.ipynb**: Extração de dados de atendimentos através da biblioteca PySUS
+- **002_SIA_TABNET.ipynb**: Extração de dados descritivos da plataforma TABNET
+- **003_SIA_Join_Datasets.ipynb**: União dos dados extraídos nas etapas anteriores
+- **004_Data_Analysis.ipynb**: Análise dos dados a partir do dataset final
+
+## Índice
+- Como executar
+- Descrição da base de dados
+   - Contexto da coleta dos dados
+   - Desafios existentes nos dados nesse Sistema de Informação Ambulatorial (SIS)
+- Desafios do projeto
+- Descrição das variáveis utilizadas
+- Coleta e tratamento de dados do SIA
+   - Fase 1: Extração de ocorrências do SIA - PySUS
+   - Fase 2: Extração da descrição dos códigos - TabNet
+   - Fase 3: Conversão e manipulação dos arquivos CSV para Parquet
+- Análise de dados do SIA
+   - Quantificação dos procedimentos
+   - Fase 4: Analisando os dados obtidos
+         - Identificação de procedimentos realizados por profissionais não especializados
+         - Identificação de municípios que recebem valor de verba inconsistente em relação a quantidade de atendimentos realizados
+         - Outros resultados
+- Referências
+
 ## Como executar
 
 1. Extrair os arquivos **data\001_PYSUS.rar** e **data\002_TABNET.rar**
@@ -189,10 +214,10 @@ CPU times: total: 0 ns
 Wall time: 238 ms
 ```
 
-### Fase 4: Analisando os dados obtidos
-
+## Análise e tratamento de dados do SIA
 ***Arquivo: 004_Data_Analysis.ipynb***
 
+### Quantificação dos procedimentos
 Inicialmente, fez-se necessário definir como será quantificado a realização de procedimentos: contagem de linhas no Dataset x somatório da coluna PA_QTDAPR (Quantidade de procedimentos aprovados para pagamento pelas Secretarias de Saúde).<br>
 
 Após comparações dos dados obtidos do PySUS e TabNet, chegou a conclusão de que a contagem de linhas no Dataset será definido para quantificar a realização de procedimentos. Segue um exemplo de como foi realizado esta definição:
@@ -203,6 +228,8 @@ Após comparações dos dados obtidos do PySUS e TabNet, chegou a conclusão de 
 
 > Os dados do TABNET são mais próximos da coluna **COUNT(1)**<br>
 <img src="_images\qtd_proc_002.png" width="70%"></img>
+
+### Fase 4: Analisando os dados obtidos
 
 #### Identificação de procedimentos realizados por profissionais não especializados
 
