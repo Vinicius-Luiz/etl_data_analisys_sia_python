@@ -126,7 +126,7 @@ Com a evolução do SUS para uma gestão cada vez mais descentralizada, o Minist
 
 ***Arquivo: 003_SIA_Join_Datasets.ipynb***
 
-Os dados extraídos do PySUS foram unidos com os dados descritivos obtidos no TabNET. O dataset do PySUS consiste em um total de 33.831.473 linhas, o que pode ser bastante volumoso e demandar recursos significativos para processamento.
+Os dados extraídos do PySUS foram unidos com os dados descritivos obtidos no TabNET. O dataset do PySUS consiste em um total de 33.831.473 linhas, o que pode ser bastante volumoso e demandar recursos significativos para processamento. Foi optado pelo PySpark para processamento eficiente de dados em larga escala, manipulando arquivos no formato Parquet.
 
 **Dados do PySUS**
 
@@ -216,6 +216,8 @@ Wall time: 238 ms
 
 ## Análise e tratamento de dados do SIA
 ***Arquivo: 004_Data_Analysis.ipynb***
+
+Na etapa de análise e tratamento dos dados do Sistema de Informação Ambulatorial (SIA), foi utilizado o PySpark para manipular arquivos Parquet, que é uma ferramenta eficiente na gestão dos dados. A versatilidade do PySpark foi valiosa ao ser aplicado linguagem SQL diretamente nos dados do SIA. Essa abordagem proporcionou uma análise mais granular. Além disso, com o objetivo de compreender visualmente os dados, foi utilizado a biblioteca Seaborn do Python para gerar os gráficos.
 
 ### Quantificação dos procedimentos
 Inicialmente, fez-se necessário definir como será quantificado a realização de procedimentos: contagem de linhas no Dataset x somatório da coluna PA_QTDAPR (Quantidade de procedimentos aprovados para pagamento pelas Secretarias de Saúde).<br>
